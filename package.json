@@ -1,0 +1,28 @@
+{
+  "name": "ui-kit-yesterdays",
+  "version": "0.0.1",
+  "main": "./dist/ui-kit-yesterdays.umd",
+  "module": "./dist/ui-kit-yesterdays.es",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/ui-kit-yesterdays.es",
+      "require": "./dist/ui-kit-yesterdays.umd"
+    },
+    "./dist/ui-kit-yesterdays.css": "./dist/ui-kit-yesterdays.css"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "sass-embedded": "^1.86.3",
+    "vite": "^6.2.0"
+  }
+}
