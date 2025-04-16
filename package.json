@@ -11,17 +11,27 @@
     },
     "./dist/ui-kit-yesterdays.css": "./dist/ui-kit-yesterdays.css"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "story:dev": "histoire dev",
+    "story:build": "histoire build",
+    "story:preview": "histoire preview",
+    "pub:patch": "npm run build && npm version patch && npm publish",
+    "pub:minor": "npm run build && npm version minor && npm publish",
+    "pub:major": "npm run build && npm version major && npm publish"
   },
   "dependencies": {
     "vue": "^3.5.13"
   },
   "devDependencies": {
+    "@histoire/plugin-vue": "^1.0.0-alpha.2",
     "@vitejs/plugin-vue": "^5.2.1",
+    "histoire": "^1.0.0-alpha.2",
     "sass-embedded": "^1.86.3",
     "vite": "^6.2.0"
   }
