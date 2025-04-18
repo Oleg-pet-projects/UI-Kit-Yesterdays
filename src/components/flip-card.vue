@@ -1,31 +1,29 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const isFlipped = ref<Boolean>(false);
+
+function handleClick(e: MouseEvent): void {
+  const target = e.target as HTMLElement | null;
+
+  if (target?.closest('.button-flip-card')) {
+    isFlipped.value = !isFlipped.value;
+  }
+}
+</script>
+
 <template>
   <div class="wrapper">
     <div class="card" :class="{ flipped: isFlipped }" @click="handleClick">
       <div class="side front">
-        <slot name="front"></slot>
+        <slot name="front" />
       </div>
       <div class="side back">
-        <slot name="back"></slot>
+        <slot name="back" />
       </div>
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from 'vue';
-
-const isFlipped = ref(false);
-
-function toggleFlip() {
-  isFlipped.value = !isFlipped.value;
-}
-
-function handleClick(e) {
-  if (e.target.closest('.button-flip-card')) {
-    toggleFlip();
-  }
-}
-</script>
 
 <style lang="scss" scoped>
 .wrapper {
@@ -37,8 +35,8 @@ function handleClick(e) {
   align-items: center;
 
   .card {
-    width: 300px;
-    height: 300px;
+    width: 100vw;
+    height: 100vh;
     position: relative;
     perspective: 1000px;
 
