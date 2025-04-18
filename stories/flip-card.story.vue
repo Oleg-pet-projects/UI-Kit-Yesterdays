@@ -34,44 +34,22 @@
 </docs>
 
 <script setup>
-import DoubleCard from '../src/ui/double-card.vue';
-import { ref } from 'vue';
-
-// Создаём реактивные переменные для HTML-содержимого лицевой и обратной сторон
-const content1 = ref(`
-  <div style="width: 200px; height: 200px; background-color: red; margin: 12px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-    Лицевая сторона
-    <button class="button-flip-card" style="margin-top: 12px;">Перевернуть</button>
-  </div>
-`);
-
-const content2 = ref(`
-  <div style="width: 200px; height: 200px; background-color: green; margin: 12px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-    Обратная сторона
-    <button class="button-flip-card" style="margin-top: 12px;">Перевернуть</button>
-  </div>
-`);
+import FlipCard from '@/components/flip-card.vue';
 </script>
 
 <template>
   <Story title="double-card">
     <Variant title="Пример карточки 1">
-      <DoubleCard>
+      <FlipCard>
         <template #front>
-          <!-- Передаём содержимое как HTML-разметку -->
-          <div v-html="content1"></div>
+          <div class="test-1">Содержимое передней стороны</div>
+          <button class="button-flip-card">Перевернуть</button>
         </template>
         <template #back>
-          <!-- Передаём содержимое как HTML-разметку -->
-          <div v-html="content2"></div>
+          <div class="test-2">Содержимое задней стороны</div>
+          <button class="button-flip-card">Перевернуть</button>
         </template>
-      </DoubleCard>
-
-      <template #controls>
-        <!-- Панель контролов для редактирования HTML-содержимого -->
-        <HstTextarea v-model="content1" title="Лицевая сторона:" />
-        <HstTextarea v-model="content2" title="Обратная сторона:" />
-      </template>
+      </FlipCard>
     </Variant>
   </Story>
 </template>

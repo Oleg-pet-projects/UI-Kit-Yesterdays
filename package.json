@@ -16,23 +16,27 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
     "story:dev": "histoire dev",
     "story:build": "histoire build",
     "story:preview": "histoire preview",
-    "pub:patch": "npm run build && npm version patch && npm publish",
-    "pub:minor": "npm run build && npm version minor && npm publish",
-    "pub:major": "npm run build && npm version major && npm publish"
+    "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
     "vue": "^3.5.13"
   },
   "devDependencies": {
     "@histoire/plugin-vue": "^1.0.0-alpha.2",
-    "@vitejs/plugin-vue": "^5.2.1",
+    "@types/node": "^22.14.1",
+    "@vitejs/plugin-vue": "^5.2.2",
+    "@vue/tsconfig": "^0.7.0",
     "histoire": "^1.0.0-alpha.2",
     "sass-embedded": "^1.86.3",
-    "vite": "^6.2.0"
+    "typescript": "~5.7.2",
+    "vite": "^6.3.0",
+    "vite-plugin-vue-devtools": "^7.7.5",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vue-tsc": "^2.2.8"
   }
 }
