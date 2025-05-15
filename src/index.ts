@@ -1,7 +1,9 @@
-import FlipCard from '@/components/flip-card.vue';
+import YButton from './components/y-button.vue';
+import YInput from './components/y-input.vue';
 
 export default {
   install: (app: any) => {
-    app.component('YFlipCard', FlipCard);
+    app.component('YButton', YButton);
+    app.component('YInput', YInput);
   }
 };
